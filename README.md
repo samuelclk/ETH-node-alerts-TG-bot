@@ -1,2 +1,2 @@
 # ETH-node-alerts-TG-bot
-Lightweight checker and alerter bot for ETH DVT operators
+Lightweight checker bot for ETH DVT operators
