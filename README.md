@@ -1,4 +1,4 @@
-# ETH-node-alerts-TG-bot
+# TLDR
 Simple and lightweight uptime checker chatbot for Solo DVT operators. (Like Google Uptime Check but free)
 # Problem
 Most solo stakers rely on beaconcha.in watchlists to notify them when their validators are missing attestations. 
