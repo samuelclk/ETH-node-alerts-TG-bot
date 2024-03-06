@@ -25,8 +25,9 @@ Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism 
 **Timeout Handling:** The script includes a timeout (e.g., 5 seconds), ensuring that if the client doesn't respond within a reasonable timeframe, it's considered "down." This helps differentiate between an unresponsive service and one that's simply slow to reply.
 
 # How to use
-*Choose your preferred option
+
 ## Hosting the script
+*Choose your preferred option
 1) Raspberry Pi: $50
 2) Smallest cloud VM: $7.11 per month
 3) Make friends with a few DVT operators and run them on the DVT nodes - e.g. Each operator checks every other operator: Free
