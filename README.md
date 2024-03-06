@@ -1,7 +1,7 @@
 # TLDR
 Simple and lightweight uptime checker chatbot for Solo DVT operators. (Like Google Uptime Check but free)
 # Problem
-Most solo stakers rely on beaconcha.in watchlists to notify them when their validators are missing attestations. 
+Most solo stakers rely on [beaconcha.in](htttps://beaconcha.in) watchlists to notify them when their validators are missing attestations. 
 
 However, this method no longer works well for solo stakers running DVTs because your nodes could be offline without causing missed attestations - Recall that a cluster of X nodes is responsible for hosting Y validator keys. 
 
@@ -9,13 +9,13 @@ This means that we either need to manually check on our nodes periodically (tedi
 
 As a solo staker, I needed a new way of being notified when my DVT node goes offline on the device/server level instead of on the on-chain level.
 
-Google Uptime Check is a good fit for the problem but it's amazingly expensive to use at US$38 - $78 per month.
+Google Uptime Check is a good fit for the problem but it's amazingly expensive to use at [US$38 - $78 per month](https://news.ycombinator.com/item?id=33434592).
 # Solution
 A Python script that pings the p2p endpoints of the consensus and execution clients of your DVT node periodically (via CronJob) and sends a Telegram message to yourself or a chat group when it doesn't receive a response.
 
 It's a lightweight solution ideal for scenarios where detailed metrics and alerts are not required.
 
-Using beaconcha.in's watchlist as an alerting mechanism is popular because it is simple to use, free, and requires no maintenance -- These are the design principles for my solution.
+Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism is popular because it is simple to use, free, and requires no maintenance -- These are the design principles for my solution.
 
 # How it works
 **HTTP Request:** The script makes an HTTP GET request to the specified IP address and port. e.g. http://<external_IP>:9000. This request is essentially asking the server, "Are you there?"
@@ -32,7 +32,7 @@ Using beaconcha.in's watchlist as an alerting mechanism is popular because it is
 
 ## Accessing your DVT node endpoints remotely
 1) Set up port forwarding on your modem/router on port 9000 and 30303 to your DVT node. Then input your public/external IP address in the IP address field of the script
-2) Set up a free Tailscale VPN account and add both your DVT node and the "checker server" to the same VPN. Then use the VPN-generated IP address of your DVT node
+2) Set up a free [Tailscale](https://tailscale.com/) VPN account and add both your DVT node and the "checker server" to the same VPN. Then use the VPN-generated IP address of your DVT node
 
 ## Making
 
