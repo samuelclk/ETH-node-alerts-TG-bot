@@ -1,7 +1,7 @@
 # TLDR
 Simple and lightweight uptime checker chatbot for Solo DVT operators. (Like Google Uptime Check but free)
 # Problem
-Most solo stakers rely on [beaconcha.in](htttps://beaconcha.in) watchlists to notify them when their validators are missing attestations. 
+Most solo stakers rely on [beaconcha.in](https://beaconcha.in) watchlists to notify them when their validators are missing attestations. 
 
 However, this method no longer works well for solo stakers running DVTs because your nodes could be offline without causing missed attestations - Recall that a cluster of X nodes is responsible for hosting Y validator keys. 
 
