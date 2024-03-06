@@ -24,4 +24,16 @@ Using beaconcha.in's watchlist as an alerting mechanism is popular because it is
 
 **Timeout Handling:** The script includes a timeout (e.g., 5 seconds), ensuring that if the client doesn't respond within a reasonable timeframe, it's considered "down." This helps differentiate between an unresponsive service and one that's simply slow to reply.
 
+# How to use
+## Hosting the script
+1) Raspberry Pi: $50
+2) Smallest VM: $7.11 per month
+3) Make friends with a few DVT operators and run them on the DVT nodes - e.g. Each operator checks every other operator: Free
+
+## Accessing your DVT node endpoints remotely
+1) Set up port forwarding on your modem/router on port 9000 and 30303 to your DVT node. Then input your public/external IP address in the IP address field of the script
+2) Set up a free Tailscale VPN account and add both your DVT node and the "checker server" to the same VPN. Then use the VPN-generated IP address of your DVT node
+
+## Making
+
 
