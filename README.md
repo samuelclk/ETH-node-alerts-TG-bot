@@ -25,19 +25,40 @@ Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism 
 **Timeout Handling:** The script includes a timeout (e.g., 5 seconds), ensuring that if the client doesn't respond within a reasonable timeframe, it's considered "down." This helps differentiate between an unresponsive service and one that's simply slow to reply.
 
 # How to use
-*Choose your combination
+*Choose your preferred option
 ## Hosting the script
 1) Raspberry Pi: $50
 2) Smallest cloud VM: $7.11 per month
 3) Make friends with a few DVT operators and run them on the DVT nodes - e.g. Each operator checks every other operator: Free
 
 ## Accessing your DVT node endpoints remotely
+*Choose your preferred option
 1) Set up port forwarding on your modem/router on port 9000 and 30303 to your DVT node. Then input your public/external IP address in the IP address field of the script
 2) Set up a free [Tailscale](https://tailscale.com/) VPN account and add both your DVT node and the "checker server" to the same VPN. Then use the VPN-generated IP address of your DVT node
 
+## Create Telegram Bot
+1) Search for @BotFather on Telegram
+2) Create new bot by entering "/newbot" and follow instructions to create new chatbot
+3) Copy Chatbot token and paste into check_sockets.py file
+4) Reference - https://sendpulse.com/knowledge-base/chatbot/telegram/create-telegram-chatbot
+5) Create a new group chat on Telegram and add your newly created chatbot into it
+6) Get Chat ID in the next step
+
+## Run Chat ID getter
+1) Enter chatbot token into chatID_getter.py script
+2) Run the chatID_getter.py as a systemd process. Refer to this [template](https://github.com/samuelclk/ETH-node-alerts-TG-bot/blob/main/Chat%20ID%20getter%20systemd%20config)
+3) Enter /chatid in your Telegram group chat
+
+## Complete checker script
+1) Copy Chatbot token and paste into check_sockets.py file
+2) Copy Chat ID and paste into check_sockets.py file
+3) Replace IP address with your public/external or VPN IP address
+
 ## Running the script as a CronJob
 1) Run "Crontab -e"
-2) Append "*/10 * * * * /usr/bin/python3 /home/user/script.py" - Run the script every 10 minutes
+2) Append "*/10 * * * * /usr/bin/python3 /home/user/check_sockets.py" - Run the script every 10 minutes
 3) Save the amended Crontab and exit
+
+## 
 
 
