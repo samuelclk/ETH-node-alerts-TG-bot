@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram Bot Service
+After=network.target
+
+[Service]
+Type=simple
+User=your_username
+WorkingDirectory=/path/to/your/bot
+ExecStart=/usr/bin/python3 /path/to/your/bot/bot_script.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
