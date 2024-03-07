@@ -32,6 +32,8 @@ _**Disclaimer:** This is meant to be a fun project for solo stakers and is in no
 
 **Timeout Handling:** The script includes a timeout (e.g., 5 seconds), ensuring that if the client doesn't respond within a reasonable timeframe, it's considered "down." This helps differentiate between an unresponsive service and one that's simply slow to reply.
 
+**Send Alert Message:** Finally, the script sends a message to the chat groups designated for each endpoint that was checked if it is “down” or “cannot be reached”. This completes the downtime alerts flow.
+
 # How to use
 
 ## Hosting the script
