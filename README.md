@@ -35,7 +35,7 @@ _**Disclaimer:** This is meant to be a fun project for solo stakers and is in no
 ## Hosting the script
 _*Choose your preferred option_
 1) Raspberry Pi: $50
-2) Smallest cloud VM: $7.11 per month
+2) Smallest cloud VM: $7.11 per month (Google Cloud)
 3) Make friends with a few DVT operators and run them on the DVT nodes - e.g. Each operator checks every other operator: Free
 
 ## Accessing your DVT node endpoints remotely
