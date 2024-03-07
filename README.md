@@ -18,7 +18,7 @@ A Python script that pings the p2p endpoints of the consensus and execution clie
 
 It's a lightweight solution ideal for scenarios where detailed metrics and alerts are not required. Use Prometheus Alert Manager otherwise.
 
-<img src="https://github.com/samuelclk/ETH-node-alerts-TG-bot/assets/31040627/cb849eb3-a6d2-410e-8132-de68d701f24e" width=50%>
+<img src="https://github.com/samuelclk/ETH-node-alerts-TG-bot/assets/31040627/9a65c288-46bf-4003-8c2e-0807ca1b5175" width=50%>
 
 
 Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism is popular because it is simple to use, free, and requires no maintenance - These are the design principles for my solution.
