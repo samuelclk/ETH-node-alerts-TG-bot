@@ -1,5 +1,7 @@
 # TLDR
-Simple and lightweight uptime checker chatbot for Solo DVT operators to monitor as many nodes as you want. (Like Google Uptime Check but free)
+Simple and lightweight uptime checker chatbot for Solo DVT operators to monitor as many nodes as you want (Like Google Uptime Check but free).
+
+Check out [my Stakewise V3 vault](https://app.stakewise.io/vault/0x649955f4189c3921df60e25f58cb1e81070fedb0) or consider [buying me a coffee](https://www.buymeacoffee.com/stakesaurus) if you find this useful for you!
 
 # Problem
 Most solo stakers rely on [beaconcha.in](https://beaconcha.in) watchlists to notify them when their validators are missing attestations. 
