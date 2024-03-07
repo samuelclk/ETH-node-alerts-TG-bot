@@ -1,5 +1,6 @@
 # TLDR
-Simple and lightweight uptime checker chatbot for Solo DVT operators. (Like Google Uptime Check but free)
+Simple and lightweight uptime checker chatbot for Solo DVT operators to monitor as many nodes as you want. (Like Google Uptime Check but free)
+
 # Problem
 Most solo stakers rely on [beaconcha.in](https://beaconcha.in) watchlists to notify them when their validators are missing attestations. 
 
@@ -13,9 +14,14 @@ Google Uptime Check is a good fit for the problem but it's amazingly expensive t
 # Solution
 A Python script that pings the p2p endpoints of the consensus and execution clients of your DVT node periodically (via CronJob) and sends a Telegram message to yourself or a chat group when it doesn't receive a response.
 
-It's a lightweight solution ideal for scenarios where detailed metrics and alerts are not required.
+It's a lightweight solution ideal for scenarios where detailed metrics and alerts are not required. Use Prometheus Alert Manager otherwise.
 
-Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism is popular because it is simple to use, free, and requires no maintenance -- These are the design principles for my solution.
+<img src="https://github.com/samuelclk/ETH-node-alerts-TG-bot/assets/31040627/cb849eb3-a6d2-410e-8132-de68d701f24e" width=50%>
+
+
+Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism is popular because it is simple to use, free, and requires no maintenance - These are the design principles for my solution.
+
+_**Disclaimer:** This is meant to be a fun project for solo stakers and is in no way meant to replace professional monitoring tools used by institutions. There might also be other free + plug-and-play solutions out there._
 
 # How it works
 **HTTP Request:** The script makes an HTTP GET request to the specified IP address and port. e.g. http://<external_IP>:9000. This request is essentially asking the server, "Are you there?"
@@ -27,19 +33,19 @@ Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism 
 # How to use
 
 ## Hosting the script
-*Choose your preferred option
+_*Choose your preferred option_
 1) Raspberry Pi: $50
 2) Smallest cloud VM: $7.11 per month
 3) Make friends with a few DVT operators and run them on the DVT nodes - e.g. Each operator checks every other operator: Free
 
 ## Accessing your DVT node endpoints remotely
-*Choose your preferred option
+_*Choose your preferred option_
 1) Set up port forwarding on your modem/router on port 9000 and 30303 to your DVT node. Then input your public/external IP address in the IP address field of the script
 2) Set up a free [Tailscale](https://tailscale.com/) VPN account and add both your DVT node and the "checker server" to the same VPN. Then use the VPN-generated IP address of your DVT node
 
 ## Create Telegram Bot
 1) Search for @BotFather on Telegram
-2) Create new bot by entering "/newbot" and follow instructions to create new chatbot
+2) Create new bot by entering "/newbot" and follow instructions to create a new chatbot
 3) Copy Chatbot token and paste into check_sockets.py file
 4) Reference - https://sendpulse.com/knowledge-base/chatbot/telegram/create-telegram-chatbot
 5) Create a new group chat on Telegram and add your newly created chatbot into it
@@ -51,15 +57,11 @@ Using [beaconcha.in](https://beaconcha.in)'s watchlist as an alerting mechanism 
 3) Enter /chatid in your Telegram group chat
 
 ## Complete checker script
-1) Copy Chatbot token and paste into check_sockets.py file
-2) Copy Chat ID and paste into check_sockets.py file
+1) Copy Chatbot token and paste into the check_sockets.py file
+2) Copy Chat ID and paste into the check_sockets.py file
 3) Replace IP address with your public/external or VPN IP address
 
 ## Running the script as a CronJob
-1) Run "Crontab -e"
-2) Append "*/10 * * * * /usr/bin/python3 /home/user/check_sockets.py" - Run the script every 10 minutes
+1) Run `Crontab -e`
+2) Append `*/10 * * * * /usr/bin/python3 /home/user/check_sockets.py` - Run the script every 10 minutes
 3) Save the amended Crontab and exit
-
-## 
-
-
