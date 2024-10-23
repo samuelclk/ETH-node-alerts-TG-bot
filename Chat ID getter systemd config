@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=your_username
 WorkingDirectory=/path/to/your/bot
-ExecStart=/usr/bin/python3 /path/to/your/bot/check_sockets.py
+ExecStart=/usr/bin/python3 /path/to/your/bot/chatID_getter.py
 Restart=on-failure
 
 [Install]
